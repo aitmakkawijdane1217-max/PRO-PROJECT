@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 35 30% 97%;
+    --foreground: 25 30% 12%;
+
+    --card: 35 25% 95%;
+    --card-foreground: 25 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 30% 12%;
+
+    --primary: 25 75% 47%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 140 25% 32%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 35 20% 90%;
+    --muted-foreground: 25 10% 45%;
+
+    --accent: 35 60% 50%;
+    --accent-foreground: 25 30% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 25 75% 47%;
+
+    --radius: 0.75rem;
+
+    --hero-gradient: linear-gradient(135deg, hsl(25, 75%, 47%) 0%, hsl(35, 60%, 50%) 50%, hsl(140, 25%, 32%) 100%);
+    --card-gradient: linear-gradient(180deg, hsl(35, 30%, 97%) 0%, hsl(35, 25%, 93%) 100%);
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--hero-gradient);
+  }
+  .bg-hero-gradient {
+    background-image: var(--hero-gradient);
+  }
+  .bg-card-gradient {
+    background-image: var(--card-gradient);
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
